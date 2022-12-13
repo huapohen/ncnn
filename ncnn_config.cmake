@@ -1,0 +1,7 @@
+if(${CMAKE_SYSTEM_NAME} STREQUAL QNX)
+  set(NCNN_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/qnx/include)
+  file(GLOB NCNN_LIBS ${CMAKE_CURRENT_LIST_DIR}/qnx/lib/libncnn.a)
+else()
+  set(NCNN_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/x86/include)
+  file(GLOB NCNN_LIBS ${CMAKE_CURRENT_LIST_DIR}/x86/lib/libncnn.so.1)
+endif()
